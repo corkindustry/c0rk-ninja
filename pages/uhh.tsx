@@ -8,7 +8,6 @@ const uhh = () => {
                 src="https://discordapp.com/widget?id=607398516360347861&theme=dark"
                 width="350"
                 height="500"
-                allowtransparency="true"
                 frameBorder="0"
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
             />
