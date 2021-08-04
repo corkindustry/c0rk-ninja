@@ -1,4 +1,4 @@
-import styles from '../components/uhh.module.scss'
+import styles from '../styles/uhh.module.scss'
 
 const uhh = () => {
     return (
