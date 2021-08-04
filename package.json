@@ -6,13 +6,20 @@
   "author": "jonah <falsefriend13@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/app.js", 
-    "dev": "nodemon src/app.js -e html,js,css"
-  }, 
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "@types/node": "^16.4.10",
+    "@types/react": "^17.0.15",
+    "typescript": "^4.3.5"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.37.2"
   }
 }

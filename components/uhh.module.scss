@@ -1,0 +1,16 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #37003C;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00FF87;
+    text-align: center;
+    
+    .header {
+        font-size: 4rem;
+        padding: 20px;
+        margin-bottom: 60px;
+    }
+}
