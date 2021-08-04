@@ -10,8 +10,8 @@ const uhh = () => {
         <title>League Uhh</title>
       </Head>
         <div className={styles.uhh}>
-            <div className={styles.header}><Image src={footFace} width="100.5" height="56.5" /> League Uhh</div>
-            <div className={styles.code}>League code: <a href="https://fantasy.premierleague.com/leagues/auto-join/btpymu">btpymu</a></div>
+            <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> League Uhh</div>
+            <div className={styles.code}>League code: <a href="https://fantasy.premierleague.com/leagues/auto-join/btpymu" target="_blank" rel="noreferrer">btpymu</a></div>
             <div className={styles.container}>
                 <div className={styles.section}>
                     <h3>League Rules</h3>
@@ -25,8 +25,8 @@ const uhh = () => {
                     <ol>
                         <li>Create your squad</li>
                         <li>Join the league using the league code (above)</li>
-                        <li>Paypal Jonah $20<br/><a href="https://paypal.me/jponeil" target="_blank">paypal.me/jponeil</a></li>
-                        <li>Join the Discord (if you haven't yet)</li>
+                        <li>Paypal Jonah $20<br/><a href="https://paypal.me/jponeil" target="_blank" rel="noreferrer">paypal.me/jponeil</a></li>
+                        <li>Join the Discord (if you haven&apos;t yet)</li>
                     </ol>
                 </div>
                 <div className={styles.section}>
