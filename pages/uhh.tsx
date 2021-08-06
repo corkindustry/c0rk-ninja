@@ -11,24 +11,23 @@ export async function getStaticProps(context) {
 
     if (!data) {
         return {
-            notFound: true
+            props: {}
         }
     }
 
     return {
-        props: { data }
+        props: data
     }
 }
 
 const uhh = (props) => {
-
     return (
         <>
             <Head>
-                <title>{props.data.league.name}</title>
+                <title>{props.name}</title>
             </Head>
             <div className={styles.uhh}>
-                <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> {props.data.league.name}</div>
+                <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> {props.name}</div>
                 <div className={styles.code}>League code: <a href="https://fantasy.premierleague.com/leagues/auto-join/btpymu" target="_blank" rel="noreferrer">btpymu</a></div>
                 <div className={styles.container}>
                     <div className={styles.section}>
@@ -50,8 +49,7 @@ const uhh = (props) => {
                     <div className={styles.section}>
                         <h3>Confirmed Clubs:</h3>
                         <ul>
-                            <li>Goon Gumpas (Jonah O)</li>
-                            <li>DrogbasDream (Brian A)</li>
+                            {props.clubs != undefined ? props.clubs.map((club) => <li key={club.name}>{club.name} ({club.manager})</li>) : <></>}
                         </ul>
                     </div>
                     <div>
