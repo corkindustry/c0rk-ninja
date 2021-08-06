@@ -1,15 +1,35 @@
 import Head from 'next/head'
 import Image from 'next/image'
+
+// import { server } from '../config'
 import styles from '../styles/uhh.module.scss'
 import footFace from '../public/images/face.jpg'
 
-const uhh = () => {
+// export async function getStaticProps(context) {
+//     const res = await fetch(`${server}/api/league`)
+//     const data = await res.json()
+
+//     if (!data) {
+//         return {
+//             notFound: true
+//         }
+//     }
+
+//     return {
+//         props: { data }
+//     }
+// }
+
+const uhh = (props) => {
+
     return (
         <>
             <Head>
+                {/* <title>{props.data.league.name}</title> */}
                 <title>League Uhh</title>
             </Head>
             <div className={styles.uhh}>
+                {/* <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> {props.data.league.name}</div> */}
                 <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> League Uhh</div>
                 <div className={styles.code}>League code: <a href="https://fantasy.premierleague.com/leagues/auto-join/btpymu" target="_blank" rel="noreferrer">btpymu</a></div>
                 <div className={styles.container}>
