@@ -25,12 +25,10 @@ const uhh = (props) => {
     return (
         <>
             <Head>
-                {/* <title>{props.data.league.name}</title> */}
-                <title>League Uhh</title>
+                <title>{props.data.league.name}</title>
             </Head>
             <div className={styles.uhh}>
                 <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> {props.data.league.name}</div>
-                <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> League Uhh</div>
                 <div className={styles.code}>League code: <a href="https://fantasy.premierleague.com/leagues/auto-join/btpymu" target="_blank" rel="noreferrer">btpymu</a></div>
                 <div className={styles.container}>
                     <div className={styles.section}>
