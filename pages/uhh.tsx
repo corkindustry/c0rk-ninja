@@ -5,7 +5,7 @@ import { server } from '../config'
 import styles from '../styles/uhh.module.scss'
 import footFace from '../public/images/face.jpg'
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const res = await fetch(`${server}/api/league`)
     const data = await res.json()
 
