@@ -11,7 +11,7 @@ export async function getServerSideProps(context) {
 
     if (!data) {
         return {
-            props: {}
+            props: 'updating...'
         }
     }
 
@@ -24,11 +24,10 @@ const uhh = (props) => {
     return (
         <>
             <Head>
-                <title>{props.name}</title>
+                <title>League Uhh</title>
             </Head>
             <div className={styles.uhh}>
-                <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> {props.name}</div>
-                <div className={styles.code}>League code: <a href="https://fantasy.premierleague.com/leagues/auto-join/btpymu" target="_blank" rel="noreferrer">btpymu</a></div>
+                <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> League Uhh</div>
                 <div className={styles.container}>
                     <div className={styles.section}>
                         <h3>League Rules</h3>
@@ -38,18 +37,20 @@ const uhh = (props) => {
                             <li>Winner take all!</li>
                         </ul>
                         <hr />
-                        <h3>Get Set Up:</h3>
+                        <h3>Pay 2 Play: Send Jonah $20 --&gt; <a href="https://paypal.me/jponeil" target="_blank" rel="noreferrer">paypal.me/jponeil</a></h3>
+                        <p>Money received from:</p>
                         <ol>
-                            <li>Create your squad</li>
-                            <li>Join the league using the league code (above)</li>
-                            <li>Paypal Jonah $20<br /><a href="https://paypal.me/jponeil" target="_blank" rel="noreferrer">paypal.me/jponeil</a></li>
-                            <li>Join the Discord (if you haven&apos;t yet)</li>
+                            <li>Jonah</li>
+                            <li>Brian</li>
+                            <li>Alan W.</li>
+                            <li>Alan C.</li>
+                            <li>Chris</li>
                         </ol>
                     </div>
                     <div className={styles.section}>
                         <h3>Confirmed Clubs:</h3>
                         <ul>
-                            {props.clubs != undefined ? props.clubs.map((club) => <li key={club.name}>{club.name} ({club.manager})</li>) : <></>}
+                            {props.clubs != undefined ? props.clubs.map((club) => <li key={club.name}>{club.name} ({club.manager})</li>) : <>{props.body}</>}
                         </ul>
                     </div>
                     <div>

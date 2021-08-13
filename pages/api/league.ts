@@ -13,31 +13,35 @@ const league = (req: NextApiRequest, res: NextApiResponse) => {
                 res.status(400).send({ error })
                 resolve(error)
             } else {
-                let clubs = []
-                // let standings = []
-                body.new_entries.results.forEach((club) => {
-                    clubs.push({
-                        name: club.entry_name,
-                        manager: `${club.player_first_name} ${club.player_last_name}`,
-                        id: club.entry
-                    })
-                })
-                // body.standings.results.forEach((club) => {
-                    //     clubs.push({
-                        //         name: club.entry_name,
-                        //         manager: `${club.player_first_name} ${club.player_last_name}`,
-                        //         id: club.entry
-                        //     })
-                        // })
-                        res.status(200).send({
-                            name: body.league.name,
-                            clubs: clubs,
-                            // standings: standings
+                if (body.new_entries === undefined) {
+                    res.status(200).send({ body })
+                } else {
+                    let clubs = []
+                    // let standings = []
+                    body.new_entries.results.forEach((club) => {
+                        clubs.push({
+                            name: club.entry_name,
+                            manager: `${club.player_first_name} ${club.player_last_name}`,
+                            id: club.entry
                         })
-                        resolve(res)
-                    }
-                })
-            })
-        }
+                    })
+                    // body.standings.results.forEach((club) => {
+                    //     clubs.push({
+                    //         name: club.entry_name,
+                    //         manager: `${club.player_first_name} ${club.player_last_name}`,
+                    //         id: club.entry
+                    //     })
+                    // })
+                    res.status(200).send({
+                        name: body.league.name,
+                        clubs: clubs,
+                        // standings: standings
+                    })
+                    resolve(res)
+                }
+            }
+        })
+    })
+}
 
 export default league
