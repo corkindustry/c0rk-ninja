@@ -50,15 +50,15 @@ const uhh = (props) => {
                         </ol>
                     </div>
                     <div className={styles.section}>
-                        <h3>Confirmed Clubs:</h3>
-                        <ul>
+                        <h3>League Table:</h3>
+                        <ol>
                             {props.clubs === undefined || props.clubs.length === 0 ? (
                                 <p>{unavailableMsg}</p>
                             ) : (
 
                                 props.clubs.map((club) => <li key={club.name}>{club.name} ({club.manager})</li>)
                             )}
-                        </ul>
+                        </ol>
                     </div>
                     <div>
                         <iframe

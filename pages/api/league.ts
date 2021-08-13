@@ -13,15 +13,15 @@ const league = (req: NextApiRequest, res: NextApiResponse) => {
                 res.status(400).send({ error })
                 resolve(error)
             } else {
-                if (body.new_entries === undefined) {
+                if (body.standings === undefined) {
                     res.status(200).send({ body })
                 } else {
                     let clubs = []
                     // let standings = []
-                    body.new_entries.results.forEach((club) => {
+                    body.standings.results.forEach((club) => {
                         clubs.push({
                             name: club.entry_name,
-                            manager: `${club.player_first_name} ${club.player_last_name}`,
+                            manager: club.player_name,
                             id: club.entry
                         })
                     })
