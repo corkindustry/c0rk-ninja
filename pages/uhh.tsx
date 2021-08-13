@@ -21,6 +21,7 @@ export async function getServerSideProps(context) {
 }
 
 const uhh = (props) => {
+    const unavailableMsg = 'Data currently unavailable'
     return (
         <>
             <Head>
@@ -45,12 +46,18 @@ const uhh = (props) => {
                             <li>Alan W.</li>
                             <li>Alan C.</li>
                             <li>Chris</li>
+                            <li>Zach</li>
                         </ol>
                     </div>
                     <div className={styles.section}>
                         <h3>Confirmed Clubs:</h3>
                         <ul>
-                            {props.clubs != undefined ? props.clubs.map((club) => <li key={club.name}>{club.name} ({club.manager})</li>) : <>{props.body}</>}
+                            {props.clubs === undefined || props.clubs.length === 0 ? (
+                                <p>{unavailableMsg}</p>
+                            ) : (
+
+                                props.clubs.map((club) => <li key={club.name}>{club.name} ({club.manager})</li>)
+                            )}
                         </ul>
                     </div>
                     <div>
