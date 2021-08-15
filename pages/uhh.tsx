@@ -61,11 +61,11 @@ const uhh = (props) => {
                                         <th></th>
                                         <th>Club</th>
                                         <th>Manager</th>
-                                        <th>Played</th>
-                                        <th>Wins</th>
-                                        <th>Draws</th>
-                                        <th>Losses</th>
-                                        <th>Points</th>
+                                        <th>Pl</th>
+                                        <th>W-D-L</th>
+                                        {/* <th>D</th>
+                                        <th>L</th> */}
+                                        <th>Pts</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -75,9 +75,10 @@ const uhh = (props) => {
                                             <td>{club.name}</td>
                                             <td>{club.manager}</td>
                                             <td className={styles.num}>{club.played}</td>
-                                            <td className={styles.num}>{club.wins}</td>
+                                            <td className={styles.num}>{club.wins}-{club.draws}-{club.losses}</td>
+                                            {/* <td className={styles.num}>{club.wins}</td>
                                             <td className={styles.num}>{club.draws}</td>
-                                            <td className={styles.num}>{club.losses}</td>
+                                            <td className={styles.num}>{club.losses}</td> */}
                                             <td className={styles.num}>{club.points}</td>
                                         </tr>
                                     ))}
