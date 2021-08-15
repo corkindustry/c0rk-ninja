@@ -60,11 +60,8 @@ const uhh = (props) => {
                                     <tr>
                                         <th></th>
                                         <th>Club</th>
-                                        <th>Manager</th>
                                         <th>Pl</th>
                                         <th>W-D-L</th>
-                                        {/* <th>D</th>
-                                        <th>L</th> */}
                                         <th>Pts</th>
                                     </tr>
                                 </thead>
@@ -72,13 +69,9 @@ const uhh = (props) => {
                                     {props.clubs.map((club) => (
                                         <tr key={club.id}>
                                             <td>{club.rankSort}</td>
-                                            <td>{club.name}</td>
-                                            <td>{club.manager}</td>
+                                            <td>{club.name}<div className={styles.managerName}>{club.manager}</div></td>
                                             <td className={styles.num}>{club.played}</td>
                                             <td className={styles.num}>{club.wins}-{club.draws}-{club.losses}</td>
-                                            {/* <td className={styles.num}>{club.wins}</td>
-                                            <td className={styles.num}>{club.draws}</td>
-                                            <td className={styles.num}>{club.losses}</td> */}
                                             <td className={styles.num}>{club.points}</td>
                                         </tr>
                                     ))}
