@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+// import { FunctionComponent } from 'react'
 
 import { server } from '../config'
 import styles from '../styles/uhh.module.scss'
@@ -22,6 +23,7 @@ export async function getServerSideProps(context) {
 
 const uhh = (props) => {
     const unavailableMsg = 'Data currently unavailable'
+
     return (
         <>
             <Head>
@@ -49,16 +51,39 @@ const uhh = (props) => {
                             <li>Zach</li>
                         </ol>
                     </div>
-                    <div className={styles.section}>
-                        <h3>League Table:</h3>
-                        <ol>
-                            {props.clubs === undefined || props.clubs.length === 0 ? (
-                                <p>{unavailableMsg}</p>
-                            ) : (
-
-                                props.clubs.map((club) => <li key={club.name}>{club.name} ({club.manager})</li>)
-                            )}
-                        </ol>
+                    <div className={styles.tableSection}>
+                        {props.clubs === undefined || props.clubs.length === 0 ? (
+                            <p>{unavailableMsg}</p>
+                        ) : (
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Club</th>
+                                        <th>Manager</th>
+                                        <th>Played</th>
+                                        <th>Wins</th>
+                                        <th>Draws</th>
+                                        <th>Losses</th>
+                                        <th>Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {props.clubs.map((club) => (
+                                        <tr key={club.id}>
+                                            <td>{club.rankSort}</td>
+                                            <td>{club.name}</td>
+                                            <td>{club.manager}</td>
+                                            <td className={styles.num}>{club.played}</td>
+                                            <td className={styles.num}>{club.wins}</td>
+                                            <td className={styles.num}>{club.draws}</td>
+                                            <td className={styles.num}>{club.losses}</td>
+                                            <td className={styles.num}>{club.points}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        )}
                     </div>
                     <div>
                         <iframe

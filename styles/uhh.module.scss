@@ -1,6 +1,6 @@
 .uhh {
     color: #00ff87;
-    
+
     .header {
         font-size: 4.5rem;
         padding: 20px;
@@ -15,10 +15,8 @@
         display: inline-flex;
         flex-flow: row wrap;
         justify-content: center;
-        
+
         .section {
-            // width: 360px;
-            // height: 400px;
             border: 1px solid #00ff87;
             border-radius: 5px;
             margin: 20px;
@@ -32,8 +30,30 @@
             }
         }
     }
+    .tableSection {
+        margin: auto 20px;
+        padding: 0;
+        table {
+            border-collapse: collapse;
+            td,
+            th {
+                // border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #00ff87;
+                color: #37003c;
+            }
+            .num {
+                text-align: center;
+            }
+        }
+    }
     a {
-        color: #F3267E;
+        color: #f3267e;
         text-decoration: none;
         &:hover {
             text-decoration: underline;
