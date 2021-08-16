@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next"
-import { IClub } from "./ILeague"
+import { NextApiRequest, NextApiResponse } from 'next'
+import { IClub } from '../../types/ILeague'
 
 const request = require('postman-request')
 
@@ -20,18 +20,18 @@ const league = (req: NextApiRequest, res: NextApiResponse) => {
                     let clubs: IClub[] = []
                     body.standings.results.forEach((club) => {
                         clubs.push({
-                            id: club.entry, 
+                            id: club.entry,
                             name: club.entry_name,
                             manager: club.player_name,
-                            rank: club.rank, 
-                            lastRank: club.last_rank, 
-                            rankSort: club.rank_sort, 
-                            total: club.total, 
-                            played: club.matches_played, 
+                            rank: club.rank,
+                            lastRank: club.last_rank,
+                            rankSort: club.rank_sort,
+                            points: club.total,
+                            played: club.matches_played,
                             wins: club.matches_won,
-                            draws: club.matches_drawn, 
-                            losses: club.matches_lost, 
-                            points: club.points_for
+                            draws: club.matches_drawn,
+                            losses: club.matches_lost,
+                            score: club.points_for
                         })
                     })
                     res.status(200).send({

@@ -7,22 +7,26 @@ import styles from '../styles/uhh.module.scss'
 import footFace from '../public/images/face.jpg'
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`${server}/api/league`)
-    const data = await res.json()
+    const league = await fetch(`${server}/api/league`)
+    const leagueData = await league.json()
 
-    if (!data) {
+    const fpl = await fetch(`${server}/api/fpl`)
+    const fplData = await fpl.json()
+
+    if (!league) {
         return {
             props: 'updating...'
         }
     }
 
     return {
-        props: data
+        props: { leagueData, fplData }
     }
 }
 
 const uhh = (props) => {
     const unavailableMsg = 'Data currently unavailable'
+    const deadline = new Date(props.fplData.deadline)
 
     return (
         <>
@@ -31,6 +35,7 @@ const uhh = (props) => {
             </Head>
             <div className={styles.uhh}>
                 <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> League Uhh</div>
+                <div className={styles.subHeader}>{props.fplData.name} deadline: {deadline.toLocaleString()}</div>
                 <div className={styles.container}>
                     <div className={styles.section}>
                         <h3>League Rules</h3>
@@ -51,8 +56,8 @@ const uhh = (props) => {
                             <li>Zach</li>
                         </ol>
                     </div>
-                    <div className={styles.tableSection}>
-                        {props.clubs === undefined || props.clubs.length === 0 ? (
+                    <div className={styles.sectionNoBorder}>
+                        {props.leagueData.clubs === undefined || props.leagueData.clubs.length === 0 ? (
                             <p>{unavailableMsg}</p>
                         ) : (
                             <table>
@@ -60,18 +65,18 @@ const uhh = (props) => {
                                     <tr>
                                         <th></th>
                                         <th>Club</th>
-                                        <th>Pl</th>
                                         <th>W-D-L</th>
+                                        <th>Score</th>
                                         <th>Pts</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {props.clubs.map((club) => (
+                                    {props.leagueData.clubs.map((club) => (
                                         <tr key={club.id}>
                                             <td>{club.rankSort}</td>
                                             <td>{club.name}<div className={styles.managerName}>{club.manager}</div></td>
-                                            <td className={styles.num}>{club.played}</td>
                                             <td className={styles.num}>{club.wins}-{club.draws}-{club.losses}</td>
+                                            <td className={styles.num}>{club.score}</td>
                                             <td className={styles.num}>{club.points}</td>
                                         </tr>
                                     ))}
@@ -79,7 +84,7 @@ const uhh = (props) => {
                             </table>
                         )}
                     </div>
-                    <div>
+                    <div className={styles.sectionNoBorder}>
                         <iframe
                             src="https://discordapp.com/widget?id=607398516360347861&theme=dark"
                             width="350"

@@ -1,3 +1,5 @@
+@import "./mixins";
+
 .uhh {
     color: #00ff87;
 
@@ -6,12 +8,13 @@
         padding: 20px;
         margin-bottom: 30px;
     }
-    .code {
+    .subHeader {
         margin-bottom: 60px;
         text-align: center;
         font-size: 2rem;
     }
     .container {
+        width: 100%;
         display: inline-flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -30,9 +33,12 @@
             }
         }
     }
-    .tableSection {
-        margin: auto 20px;
-        padding: 0;
+    .sectionNoBorder {
+        margin: auto 40px;
+        padding: 40px 0;
+        @include respond(small) {
+            margin: 0;
+        }
         table {
             border-collapse: collapse;
             td,
@@ -48,7 +54,7 @@
             }
             .managerName {
                 font-size: 0.8rem;
-                padding-left:20px;
+                padding-left: 20px;
             }
             .num {
                 text-align: center;

@@ -5,10 +5,10 @@ export interface IClub {
     rank: string;
     lastRank: string;
     rankSort: string;
-    total: string;
+    points: string;
     played: string;
     wins: string;
     draws: string;
     losses: string;
-    points: string;
+    score: string;
 }
