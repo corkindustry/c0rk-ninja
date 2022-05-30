@@ -34,10 +34,10 @@ const uhh = (props) => {
                 <title>League Uhh</title>
             </Head>
             <div className={styles.uhh}>
-                <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> League Uhh</div>
-                <div className={styles.subHeader}>{props.fplData.name} deadline: {deadline.toLocaleString()}</div>
+                <div className={styles.header}><Image alt="Fellaini" src={footFace} width="100.5" height="56.5" /> League Uhh 21-22</div>
+                {/* <div className={styles.subHeader}>{props.fplData.name} deadline: {deadline.toLocaleString()}</div> */}
                 <div className={styles.container}>
-                    <div className={styles.section}>
+                    {/* <div className={styles.section}>
                         <h3>League Rules</h3>
                         <ul>
                             <li>$20 per club</li>
@@ -55,7 +55,7 @@ const uhh = (props) => {
                             <li>Chris</li>
                             <li>Zach</li>
                         </ol>
-                    </div>
+                    </div> */}
                     <div className={styles.sectionNoBorder}>
                         {props.leagueData.clubs === undefined || props.leagueData.clubs.length === 0 ? (
                             <p>{unavailableMsg}</p>
@@ -84,7 +84,7 @@ const uhh = (props) => {
                             </table>
                         )}
                     </div>
-                    <div className={styles.sectionNoBorder}>
+                    {/* <div className={styles.sectionNoBorder}>
                         <iframe
                             src="https://discordapp.com/widget?id=607398516360347861&theme=dark"
                             width="350"
@@ -92,7 +92,7 @@ const uhh = (props) => {
                             frameBorder="0"
                             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
