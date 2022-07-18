@@ -84,29 +84,32 @@ const uhh = (props) => {
                                 </tbody>
                             </table>
                         )} */}
-                        <iframe 
-                        width="640px" 
-                        height="1200px" 
-                        src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAK0JLUJUM1ZFWkFXQUlGT0QxUDA1TU0wWFZaT1NFNS4u&embed=true" 
-                        // frameBorder="0" 
-                        // marginwidth="0" 
-                        // marginheight="0" 
-                        // styles="border: none; max-width:100%; max-height:100vh" 
-                        frameBorder="0"
-                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                        // webkitallowfullscreen 
-                        // mozallowfullscreen 
-                        // msallowfullscreen 
-                        />
+                        <h1>Take the draft survey <a href="https://forms.office.com/r/qAphR3uDfH" target="_blank" rel="noreferrer">here</a></h1>
+                        <div>
+                            <h2>League info:</h2>
+                            <ul>
+                                <li>FPL Draft</li>
+                                <li>$20 to play</li>
+                                <li>$50 penalty to the last-place club at the end of the season</li>
+                            </ul>
+                            <hr />
+                            <h2>Get set up:</h2>
+                            <ol>
+                                <li>Join the discord, if you haven&apos;t already.</li>
+                                <li>Set your name on Discord to your team name.</li>
+                                <li>Go to the <strong>#rules-and-info</strong> channel. The info on how to pay me is there.</li>
+                                <li>Send me $20.<br/>Once I receive your payment, i&apos;ll add you to the <strong>#join-the-league</strong> channel which has the league code.</li>
+                                <li>Join the league and set up your watchlist!</li>
+                            </ol>
+                        </div>
                     </div>
-                    {/* <div className={styles.sectionNoBorder}>
+                    <div className={styles.sectionNoBorder}>
                         <iframe
                         src="https://discordapp.com/widget?id=607398516360347861&theme=dark"
                         width="350"
                         height="500"
                         />
-                    </div> */}
-                    <p><a href="https://forms.office.com/r/kzzWiH2FL7">Click here</a> if the form looks weird.</p>
+                    </div>
                 </div>
             </div>
         </>
