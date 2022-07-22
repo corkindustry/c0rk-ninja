@@ -84,16 +84,18 @@ const uhh = (props) => {
                                 </tbody>
                             </table>
                         )} */}
-                        <h1>Take the draft survey <a href="https://forms.office.com/r/qAphR3uDfH" target="_blank" rel="noreferrer">here</a></h1>
+                        <h1>The draft is Monday, August 1st @ 9pm EST!</h1>
+                        <h3><a href="https://discord.gg/BWwrPKps?event=1000027343080923136" target="_blank" rel="noreferrer">Join the Discord Event</a></h3>
+                        <h3><a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M2Rjam04YjJyanFjOHZma2gxZDM3OGVlZW0gZmFsc2VmcmllbmQxM0Bt&tmsrc=falsefriend13%40gmail.com" target="_blank" rel="noreferrer">Add to Google Calendar</a></h3>
                         <div>
-                            <h2>League info:</h2>
+                            <h2 style={{paddingTop: '40px'}}>League info:</h2>
                             <ul>
                                 <li>FPL Draft</li>
                                 <li>$20 to play</li>
                                 <li>$50 penalty to the last-place club at the end of the season</li>
                             </ul>
                             <hr />
-                            <h2>Get set up:</h2>
+                            <h2 style={{paddingTop: '40px'}}>Get set up:</h2>
                             <ol>
                                 <li>Join the discord, if you haven&apos;t already.</li>
                                 <li>Set your name on Discord to your team name.</li>
